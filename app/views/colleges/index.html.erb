@@ -1,14 +1,15 @@
 <h1 class="title">College Locator</h1>
 
 <div class="search-container" data-controller="colleges-search">
-    <h3 class="search-title">What school are you looking for? </h3>
-    <%= form_tag colleges_search_path, method: :get, remote: true do %>
-        <div class="search-field-container">
-            <%= text_field_tag :name, nil, class: "search-field",
-                placeholder: "Ex.: University of California" %>
-            <%= button_tag "Search", class: "search-button" %>
-        </div>
-    <% end %>
+  <h3 class="search-title">What school are you looking for? </h3>
+
+  <%= form_tag colleges_search_path, method: :get, remote: true do %>
+    <div class="search-field-container">
+      <%= text_field_tag :name, nil, class: "search-field",
+        placeholder: "Ex.: University of California" %>
+      <%= button_tag "Search", class: "search-button" %>
+    </div>
+  <% end %>
 </div>
 
 <%= turbo_frame_tag "results_frame" do %>

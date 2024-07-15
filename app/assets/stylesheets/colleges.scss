@@ -1,9 +1,9 @@
-$not-black: #100d0b;
+$dark-gray: #64605c;
 $light-gray: #b2ada9;
 $lighter-gray: #d7dee4;
 $lightest-gray: #e4e4e4;
-$dark-gray: #64605c;
 $midnight: #0b011e;
+$not-black: #100d0b;
 
 .title {
   color: $not-black;
@@ -20,10 +20,10 @@ $midnight: #0b011e;
 }
 
 .search-title {
-  margin: 0;
-  padding: 0;
   font-weight: 500;
+  margin: 0;
   margin-bottom: 10px;
+  padding: 0;
 }
 
 .search-field-container {
@@ -33,16 +33,16 @@ $midnight: #0b011e;
 }
 
 .search-field {
-  color: $not-black;
-  font-size: 15px;
-  padding: 10px 15px;
-  min-width: 205px;
-  width: 100%;
   border: 1px solid $not-black;
   border-radius: 6px;
   border-right: none;
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
+  color: $not-black;
+  font-size: 15px;
+  min-width: 205px;
+  padding: 10px 15px;
+  width: 100%;
 }
 
 .search-field:focus-visible {
@@ -50,14 +50,13 @@ $midnight: #0b011e;
 }
 
 .search-button {
-  color: $not-black;
-  font-size: 15px;
-  padding: 10px 15px;
-
   border: 1px solid $not-black;
   border-radius: 6px;
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
+  color: $not-black;
+  font-size: 15px;
+  padding: 10px 15px;
 }
 
 .college-search-results {
@@ -91,8 +90,8 @@ $midnight: #0b011e;
 }
 
 .college-block {
-  padding: 20px 25px;
   border-bottom: 1px solid $light-gray;
+  padding: 20px 25px;
 
   &:last-child {
     border: none;
@@ -103,8 +102,8 @@ $midnight: #0b011e;
   }
 
   &.selected {
-    color: $midnight;
     background-color: $lightest-gray;
+    color: $midnight;
   }
 }
 
@@ -120,7 +119,7 @@ $midnight: #0b011e;
 }
 
 .college-search-fail {
+  color: $dark-gray;
   font-size: 18px;
   font-weight: 200;
-  color: $dark-gray;
 }

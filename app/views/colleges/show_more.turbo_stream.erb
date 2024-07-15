@@ -1,11 +1,11 @@
 <%= turbo_stream.append "more_colleges" do %>
-    <%= render partial: "colleges/index/college", collection: @colleges, as: :college %>
+  <%= render partial: "colleges/index/college", collection: @colleges, as: :college %>
 <% end %>
 
 <% if ((@search_metadata["page"] + 1) *  @search_metadata["per_page"]) < @search_metadata["total"] %>
-    <%= turbo_stream.replace "show_more" do %>
-        <%= turbo_frame_tag "show_more",
-            src: colleges_show_more_path(name: @search_metadata["name"], page: @search_metadata["page"] + 1, format: :turbo_stream),
-            loading: :lazy %>
-    <% end %>
+  <%= turbo_stream.replace "show_more" do %>
+    <%= turbo_frame_tag "show_more",
+      src: colleges_show_more_path(name: @search_metadata["name"], page: @search_metadata["page"] + 1, format: :turbo_stream),
+      loading: :lazy %>
+  <% end %>
 <% end %>

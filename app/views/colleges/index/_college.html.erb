@@ -1,17 +1,17 @@
 <%= link_to colleges_show_map_path(map_data: gmap_data_format(college)),
-    class: "college-link",
-    data: { turbo_frame: "gmap_frame", controller: "colleges-link", action: "click->colleges-link#highlightSelected" },
-    remote: true do %>
-    <div class="college-block" id="<%= college.id %>" data-colleges-link-target="container">
-        <h4 class="college-name">
-            <%= college.name %>
-        </h4>
-        <p class="college-address">
-            <%= college.address %>
-            </br>
-            <%= college.city %>,
-            <%= college.state %>,
-            <%= college.zip %>
-        </p>
-    </div>
+  class: "college-link",
+  data: { turbo_frame: "gmap_frame", controller: "colleges-link", action: "click->colleges-link#highlightSelected" },
+  remote: true do %>
+  <div class="college-block" id="<%= college.id %>" data-colleges-link-target="container">
+    <h4 class="college-name">
+      <%= college.name %>
+    </h4>
+    <p class="college-address">
+      <%= college.address %>
+      </br>
+      <%= college.city %>,
+      <%= college.state %>,
+      <%= college.zip %>
+    </p>
+  </div>
 <% end %>
