@@ -1,0 +1,31 @@
+<h4 class="results-title">
+    <%= search_metadata["total"] %>
+    <%= "school".pluralize(search_metadata["total"]) %>
+    found:
+</h4>
+
+<% if search_metadata["total"] > 0 %>
+    <div class="college-search-results">
+        <div class="college-list" data-controller="colleges-index">
+            <%= render partial: "colleges/index/college", collection: colleges, as: :college %>
+            <%= turbo_frame_tag "more_colleges",
+                src: colleges_show_more_path(format: :turbo_stream),
+                loading: :lazy %>
+
+            <% if ((search_metadata["page"] + 1) *  search_metadata["per_page"]) < search_metadata["total"] %>
+                <%= turbo_frame_tag "show_more",
+                    src: colleges_show_more_path(name: @search_metadata["name"], page: @search_metadata["page"] + 1, format: :turbo_stream),
+                    loading: :lazy %>
+            <% end %>
+        </div>
+
+        <div class="college-map">
+            <%= turbo_frame_tag "gmap_frame" do %>
+                <% map_data = gmap_data_format(colleges.first) %>
+                <%= gmap(map_data) %>
+            <% end %>
+        </div>
+    </div>
+<% else %>
+    <p class="college-search-fail">An apology: there are no schools with that name. Try looking for a different name.</p>
+<% end %>

@@ -1,10 +1,15 @@
 Rails.application.routes.draw do
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  resources :colleges, only: :index
+  get "colleges/search", to: "colleges#search"
+  get "colleges/show_more", to: "colleges#show_more"
+  get "colleges/show_map", to: "colleges#show_map"
 
-  # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
-  # Can be used by load balancers and uptime monitors to verify that the app is live.
-  get "up" => "rails/health#show", as: :rails_health_check
+  # On a more refined structure, we can keep smaller and more specialized controller
+  # namespace :colleges do
+  #   resources :show_more, only: :index
+  #   resource :search, only: :show
+  # end
 
   # Defines the root path route ("/")
-  # root "posts#index"
+  root "colleges#index"
 end

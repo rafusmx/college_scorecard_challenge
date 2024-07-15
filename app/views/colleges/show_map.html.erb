@@ -1,0 +1,3 @@
+<%= turbo_frame_tag "gmap_frame" do %>
+    <%= render partial: "colleges/gmap", locals: { map_data: params[:map_data] } %>
+<% end %>

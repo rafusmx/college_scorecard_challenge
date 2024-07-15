@@ -1,0 +1,126 @@
+$not-black: #100d0b;
+$light-gray: #b2ada9;
+$lighter-gray: #d7dee4;
+$lightest-gray: #e4e4e4;
+$dark-gray: #64605c;
+$midnight: #0b011e;
+
+.title {
+  color: $not-black;
+  font-weight: 500;
+}
+
+.search-container {
+  border: 1px solid $light-gray;
+  border-radius: 8px;
+  padding: 20px;
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-bottom: 25px;
+}
+
+.search-title {
+  margin: 0;
+  padding: 0;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.search-field-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+.search-field {
+  color: $not-black;
+  font-size: 15px;
+  padding: 10px 15px;
+  min-width: 205px;
+  width: 100%;
+  border: 1px solid $not-black;
+  border-radius: 6px;
+  border-right: none;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.search-field:focus-visible {
+  outline: none;
+}
+
+.search-button {
+  color: $not-black;
+  font-size: 15px;
+  padding: 10px 15px;
+
+  border: 1px solid $not-black;
+  border-radius: 6px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.college-search-results {
+  color: $not-black;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  height: calc(85vh - 210px);
+}
+
+.college-list {
+  border: 1px solid $light-gray;
+  border-radius: 8px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  overflow: auto;
+}
+
+.college-map {
+  border: 1px solid $light-gray;
+  border-radius: 8px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  width: 100%;
+  overflow: hidden;
+}
+
+.college-link {
+  color: $not-black;
+  text-decoration: none;
+}
+
+.college-block {
+  padding: 20px 25px;
+  border-bottom: 1px solid $light-gray;
+
+  &:last-child {
+    border: none;
+  }
+
+  &:hover {
+    background-color: $lighter-gray;
+  }
+
+  &.selected {
+    color: $midnight;
+    background-color: $lightest-gray;
+  }
+}
+
+.college-name {
+  margin: 0;
+  margin-bottom: 3px;
+  padding: 0;
+}
+
+.college-address {
+  margin: 0;
+  padding: 0;
+}
+
+.college-search-fail {
+  font-size: 18px;
+  font-weight: 200;
+  color: $dark-gray;
+}
